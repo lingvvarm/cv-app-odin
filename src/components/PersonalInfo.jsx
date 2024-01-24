@@ -2,27 +2,26 @@ import { ControlledInput } from './ControlledInputs';
 import '../styles/PersonalInfo.scss'
 
 function PersonalInfo({ personalInfo, setPersonalInfo }) {
-  const initValue = {fullName: '', email: '', phone: '', address: ''};
   return (
     <div className='personal-info'>
-      <h1>Personal details</h1>
+      <h1 className='personal-info-header'>Personal details</h1>
       <form className="personal-info-inputs">
       <label htmlFor='fullName'>
         Full Name
       </label>
-      <ControlledInput name='fullName' currForm={personalInfo} changeCurrForm={setPersonalInfo} initValue={initValue.fullName}/>
+      <ControlledInput maxLength="35" name='fullName' currForm={personalInfo} changeCurrForm={setPersonalInfo}/>
       <label htmlFor='email'>
         Email
       </label>
-      <ControlledInput name='email' currForm={personalInfo} changeCurrForm={setPersonalInfo} initValue={initValue.email}/>
+      <ControlledInput maxLength="30"  name='email' currForm={personalInfo} changeCurrForm={setPersonalInfo}/>
       <label htmlFor='phone'>
         Phone number
       </label>
-      <ControlledInput name='phone' currForm={personalInfo} changeCurrForm={setPersonalInfo} initValue={initValue.phone}/>
+      <ControlledInput maxLength="20"  name='phone' currForm={personalInfo} changeCurrForm={setPersonalInfo}/>
       <label htmlFor='address'>
         Address
       </label>
-      <ControlledInput name='address' currForm={personalInfo} changeCurrForm={setPersonalInfo} initValue={initValue.address}/>
+      <ControlledInput maxLength="25"  name='address' currForm={personalInfo} changeCurrForm={setPersonalInfo}/>
       </form>
     </div>
   )

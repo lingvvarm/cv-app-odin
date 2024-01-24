@@ -1,0 +1,70 @@
+@use './PersonalInfo.scss';
+
+@mixin flexbox-column {
+    display: flex;
+    flex-direction: column;
+}
+
+.data-form {
+    @include flexbox-column();
+    background-color: white;
+    margin-top: 10px;
+    padding: 18px;
+
+    input, textarea {
+        @include PersonalInfo.inputs();
+        @include PersonalInfo.inputs_focus();
+    }
+
+    label {
+        @include PersonalInfo.input_label();
+    }
+
+    textarea {
+        max-width: 100%;
+        resize: none;
+    }
+}
+
+.date-blocks {
+    display: flex;
+    gap: 20px;
+}
+
+.date-block {
+    @include flexbox-column();
+}
+
+.form-btns-block {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 15px;
+}
+
+.form-btns-subblock {
+    display: flex;
+    gap: 15px;
+}
+
+.form-btn {
+    padding: 8px 16px;
+    border-radius: 5px;
+    border: none;
+    cursor: pointer;
+    background-color: initial;
+    border: 1px solid gray;
+    font-weight: bold;
+}
+
+
+#save-btn {
+    background-color: #E1A551;
+    outline: none;
+}
+
+.date-format-advice {
+    font-size: 10px;
+    color: #E1A551;
+    margin-top: -5px;
+    margin-bottom: 5px;
+}

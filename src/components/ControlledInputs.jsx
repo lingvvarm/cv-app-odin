@@ -1,28 +1,22 @@
-import { useState } from "react";
-
-function ControlledInput({ name, currForm, changeCurrForm, initValue }) {
-    const [value, setValue] = useState(initValue);
+function ControlledInput({ maxLength, name, currForm, changeCurrForm }) {
     return (
-        <input type="text" id={name}
-        value={value}
+        <input maxLength={maxLength} type="text" id={name}
+        value={currForm[name]}
         onChange={(e) => {
             e.stopPropagation();
             const updatedValue = e.target.value;
-            setValue(updatedValue);
             changeCurrForm({...currForm, [name]: updatedValue});
         }}
         />
     )
 }
 
-function ControlledTextArea({ name, currForm, changeCurrForm, initValue }) {
-    const [value, setValue] = useState(initValue);
+function ControlledTextArea({ name, currForm, changeCurrForm }) {
     return (
-        <textarea id={name} value={value} onChange={(e) => {
+        <textarea rows={6} id={name} value={currForm[name]} onChange={(e) => {
             e.stopPropagation();
             const updatedValue = e.target.value;
-            setValue(updatedValue);
-            changeCurrForm({...currForm, [name]: initValue});
+            changeCurrForm({...currForm, [name]: updatedValue});
         }}>
         </textarea>
     )

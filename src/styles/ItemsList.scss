@@ -1,0 +1,28 @@
+@import './Forms.scss';
+
+.item {
+    background-color: white;
+    padding: 20px;
+    font-size: 20px;
+    font-weight: bold;
+    margin-top: 10px;
+    cursor: pointer;
+}
+
+.list-button-block {
+    background-color: white;
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 10px;
+    border-radius: 0 0 12px 12px;
+}
+
+.add-item-btn {
+    @extend .form-btn;
+}
+
+.add-item-btn:active {
+    background-color: #EAC085;
+}

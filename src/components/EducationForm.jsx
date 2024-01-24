@@ -1,5 +1,5 @@
 import { ControlledInput } from './ControlledInputs';
-import '../styles/EducationForm.scss';
+import '../styles/Forms.scss';
 
 function EducationForm({ formFill, currForm, setCurrForm }) {
     return (
@@ -7,23 +7,31 @@ function EducationForm({ formFill, currForm, setCurrForm }) {
       <label htmlFor='school'>
         School
       </label>
-      <ControlledInput name='school' currForm={currForm} changeCurrForm={setCurrForm} initValue={formFill.school}/>
+      <ControlledInput maxLength="45" name='school' currForm={currForm} changeCurrForm={setCurrForm} initValue={formFill.school}/>
       <label htmlFor='degree'>
         Degree
       </label>
-      <ControlledInput name='degree' currForm={currForm} changeCurrForm={setCurrForm} initValue={formFill.degree}/>
-      <label htmlFor='startDate'>
-        Start date
-      </label>
-      <ControlledInput name='startDate' currForm={currForm} changeCurrForm={setCurrForm} initValue={formFill.startDate}/>
-      <label htmlFor='endDate'>
-        End date
-      </label>
-      <ControlledInput name='endDate' currForm={currForm} changeCurrForm={setCurrForm} initValue={formFill.endDate}/>
+      <ControlledInput maxLength="50" name='degree' currForm={currForm} changeCurrForm={setCurrForm} initValue={formFill.degree}/>
+      <div className="date-blocks">
+        <div className="date-block">
+          <label htmlFor='startDate'>
+            Start date
+          </label>
+          <p className='date-format-advice'>format: mm/yyyy</p>
+          <ControlledInput maxLength="8" name='startDate' currForm={currForm} changeCurrForm={setCurrForm} initValue={formFill.startDate}/>
+        </div>
+        <div className="date-block">
+          <label htmlFor='endDate'>
+            End date
+          </label>
+          <p className='date-format-advice'>format: mm/yyyy</p>
+          <ControlledInput maxLength="8" name='endDate' currForm={currForm} changeCurrForm={setCurrForm} initValue={formFill.endDate}/>
+        </div>
+      </div>
       <label htmlFor='location'>
         Location
       </label>
-      <ControlledInput name='location' currForm={currForm} changeCurrForm={setCurrForm} initValue={formFill.location}/>
+      <ControlledInput maxLength="20" name='location' currForm={currForm} changeCurrForm={setCurrForm} initValue={formFill.location}/>
       </>
     )
 }

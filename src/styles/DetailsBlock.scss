@@ -1,0 +1,24 @@
+.detailsBlock {
+    background-color: white;
+    padding: 25px;
+    border-radius: 12px;
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.block-expanded {
+    border-radius: 12px 12px 0 0;
+}
+
+.detail-block-header {
+    display: flex;
+    gap: 12px;
+    align-items: center;
+    user-select: none;
+}
+
+.details-block-icon {
+    user-select: none;
+}

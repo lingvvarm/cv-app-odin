@@ -1,4 +1,54 @@
+.personal-info {
+    background-color: white;
+    padding: 20px;
+    border-radius: 15px;
+}
+
+.personal-info-header {
+    margin-bottom: 20px;
+    font-size: 1.8rem;
+}
+
 .personal-info-inputs {
     display: flex;
     flex-direction: column;
+}
+
+@mixin input_label() {
+    font-weight: bold;
+    margin-top: 12px;
+    margin-bottom: 6px;
+}
+
+.personal-info-inputs > label {
+    @include input_label();
+}
+
+.personal-info-inputs > label:first-of-type {
+    margin-top: 0;
+}
+
+@mixin inputs() {
+    padding: 10px;
+    border-radius: 12px;
+    border: 2px solid transparent;
+    background-color: whitesmoke;
+    cursor: text;
+    transition: border 0.2s, box-shadow 0.2s;
+}
+
+@mixin inputs_focus() {
+    &:focus {
+        border: 2px solid #E19C3D;
+        box-shadow: 0 0 4px #E19C3D;
+        outline: none;
+    }
+}
+
+.personal-info-inputs > input {
+    @include inputs();
+}
+
+.personal-info-inputs > input:focus {
+    @include inputs_focus();
 }
