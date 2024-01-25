@@ -14,31 +14,33 @@ function App() {
   const [experienceInfo, setExperienceInfo] = useState(dummyExperienceInfo);
   return (
     <div className='app'>
-      <div className="forms-block">
-      <div className="app-btns-block">
-        <button className='form-btn' type='button' onClick={() => {
-          setPersonalInfo({fullName: '', email: '', phone: '', address: ''});
-          setEducationInfo(new Array());
-          setExperienceInfo(new Array());
-        }}>Clear all</button>
-        <button className='form-btn' type='button' onClick={() => {
-          setPersonalInfo(dummyPersonalInfo);
-          setEducationInfo(dummyEducationInfo);
-          setExperienceInfo(dummyExperienceInfo);
-        }}>Load example</button>
-      </div>
-        <div className="inputs-block">
-          <PersonalInfo personalInfo={personalInfo} setPersonalInfo={setPersonalInfo}/>
-          <div className="details-block">
-            <DetailsBlock type="education" items={educationInfo} setItems={setEducationInfo}/>
-          </div>
-          <div className="details-block">
-            <DetailsBlock type="experience" items={experienceInfo} setItems={setExperienceInfo}/>
+      <div className="app-container">
+        <div className="forms-block">
+        <div className="app-btns-block">
+          <button className='form-btn' type='button' onClick={() => {
+            setPersonalInfo({fullName: '', email: '', phone: '', address: ''});
+            setEducationInfo(new Array());
+            setExperienceInfo(new Array());
+          }}>Clear all</button>
+          <button className='form-btn' type='button' onClick={() => {
+            setPersonalInfo(dummyPersonalInfo);
+            setEducationInfo(dummyEducationInfo);
+            setExperienceInfo(dummyExperienceInfo);
+          }}>Load example</button>
+        </div>
+          <div className="inputs-block">
+            <PersonalInfo personalInfo={personalInfo} setPersonalInfo={setPersonalInfo}/>
+            <div className="details-block">
+              <DetailsBlock type="education" items={educationInfo} setItems={setEducationInfo}/>
+            </div>
+            <div className="details-block">
+              <DetailsBlock type="experience" items={experienceInfo} setItems={setExperienceInfo}/>
+            </div>
           </div>
         </div>
-      </div>
-      <div className="resume-block">
-        <Resume personalInfo={personalInfo} educationInfo={educationInfo} experienceInfo={experienceInfo}/>
+        <div className="resume-block">
+          <Resume personalInfo={personalInfo} educationInfo={educationInfo} experienceInfo={experienceInfo}/>
+        </div>
       </div>
     </div>
   )

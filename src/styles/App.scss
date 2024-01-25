@@ -1,16 +1,20 @@
 .app {
     display: flex;
-    gap: 50px;
     justify-content: center;
-    padding: 30px 20px;
     background-color: whitesmoke;
+}
+
+.app-container {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    column-gap: 50px;
+    padding: 30px 20px;
 }
 
 .inputs-block {
     display: flex;
     flex-direction: column;
     gap: 30px;
-    width: 500px;
 }
 
 .app-btns-block {
@@ -21,4 +25,12 @@
     margin-bottom: 20px;
     padding: 10px;
     border-radius: 12px;
+}
+
+@media screen and (max-width: 1150px) {
+    .app-container {
+        grid-template-columns: 1fr;
+        row-gap: 20px;
+    }
+
 }
